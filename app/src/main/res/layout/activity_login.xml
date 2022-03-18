@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context=".LoginActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_login_title"
+        style="@style/Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/login_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_login_sub_title"
+        style="@style/SubTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="@string/login_sub_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_login_title" />
+
+    <EditText
+        android:id="@+id/til_email"
+        android:background="@drawable/bg_text_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:hint="@string/login_email"
+        android:textColorHint="@color/grey"
+        android:drawableStart="@drawable/ic_circle_account"
+        android:padding="15dp"
+        android:drawablePadding="15dp"
+        android:textColor="@color/grey"
+        />
+
+
+    <EditText
+        android:id="@+id/til_password"
+        android:background="@drawable/bg_text_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:hint="@string/login_password"
+        android:textColorHint="@color/grey"
+        android:drawableStart="@drawable/ic_circle_account"
+        android:padding="15dp"
+        android:drawablePadding="15dp"
+        android:textColor="@color/grey">
+
+    </EditText>
+
+
+    <Button
+        android:id="@+id/btn_login"
+        android:background="@drawable/bg_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_login"
+        android:layout_marginTop="300dp"/>
+
+
+</LinearLayout>

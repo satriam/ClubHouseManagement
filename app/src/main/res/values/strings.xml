@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">BukitAsam</string>
+    <string name="started_title">HALOOO!!!</string>
+    <string name="started_sub_title">
+       Nice to meet you, come join our community!
+       <br><b>Login</b> if you already have an account.</br>
+       <br><b>Register</b> to get started with the app.</br>
+   </string>
+    <string name="illustration_img">illustration_img</string>
+    <string name="btn_register">Register</string>
+    <string name="btn_login">login</string>
+    <string name="login_title">login to app</string>
+    <string name="login_sub_title">
+        <font color="#F4DFBA"><b>Login</b></font>
+        if you already have an account.
+    </string>
+    <string name="login_email">your email or username</string>
+    <string name="login_password">your password</string>
+    <string name="login_forgot_pw">Forgot Password?</string>
+    <string name="login_havent_account">
+        I don\'t have an account
+        <font color="#F4DFBA"><b>Register</b></font>
+    </string>
+    <string name="register_title">Create an account</string>
+    <string name="register_sub_title">
+        <font color="#F4DFBA"><b>Register</b></font>
+        to get started with the app.
+    </string>
+    <string name="register_fullname">your full name</string>
+    <string name="register_email">your email</string>
+    <string name="register_username">your username</string>
+    <string name="register_confirm_password">Confirm Password</string>
+    <string name="register_have_account">
+        I already have an account
+        <font color="#F4DFBA"><b>Login</b></font>
+    </string>
+    <string name="home_title">HELLOO WORLD!!!</string>
+    <string name="home_sub_title">welcome to home</string>
+    <string name="btn_logout">LOGOUT</string>
+    <string name="reset_pw_title">Reset Your Password</string>
+    <string name="reset_pw_sub_title">
+        <font color="#F4DFBA">Reset Password</font>
+        if you forgot your password.
+    </string>
+    <string name="btn_reset_pw">reset password</string>
+
+    <string name="back_to_login">
+        Back To
+        <font color="#F4DFBA"><b>Login</b></font>
+    </string>
+    <string name="profil">PROFIL</string>
+    <string name="mata_kuliah">mata kuliah</string>
+    <string name="about">about</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
