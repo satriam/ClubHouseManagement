@@ -1,9 +1,11 @@
 package com.example.bukitasam
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -13,6 +15,11 @@ import com.budiyev.android.codescanner.CodeScannerView
 import com.budiyev.android.codescanner.DecodeCallback
 import com.budiyev.android.codescanner.ErrorCallback
 import com.budiyev.android.codescanner.ScanMode
+import com.example.bukitasam.Models.data_checkin
+import com.example.bukitasam.retrofit.RetrofitInstance
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class QRScanActivity : AppCompatActivity() {
     private lateinit var codeScanner: CodeScanner
@@ -29,6 +36,7 @@ class QRScanActivity : AppCompatActivity() {
     }
 
     private fun startScanning(){
+        val apiClient = RetrofitInstance.Create(this)
         val scannerView:CodeScannerView=findViewById(R.id.scanner_view)
         codeScanner= CodeScanner(this,scannerView)
         codeScanner.camera=CodeScanner.CAMERA_BACK
@@ -41,6 +49,36 @@ class QRScanActivity : AppCompatActivity() {
 
         codeScanner.decodeCallback= DecodeCallback {
             runOnUiThread {
+//                val hasil= it.text.toString()
+                val sendData = apiClient.createcheckin(
+                    it.text.toString()
+                ).enqueue(object : Callback<data_checkin> {
+                    override fun onResponse(call: Call<data_checkin>, response: Response<data_checkin>) {
+                        val response =response.body()
+                        if (response?.status==200) {
+
+                            val intent = Intent(this@QRScanActivity, MainActivity::class.java).also {
+                                it.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+                            }
+                            startActivity(intent)
+
+
+                        } else {
+                            Log.d("Debug", "")
+                            Toast.makeText(this@QRScanActivity, "Login failed!", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+
+
+                    override fun onFailure(call: Call<data_checkin>, t: Throwable) {
+                        Toast.makeText(
+                            this@QRScanActivity,
+                            t.message,
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+
+                })
                 Toast.makeText(this, "scan Result: ${it.text}", Toast.LENGTH_SHORT).show()
             }
         }

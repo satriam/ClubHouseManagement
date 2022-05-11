@@ -45,20 +45,43 @@
         />
 
 
-    <EditText
-        android:id="@+id/til_password"
-        android:background="@drawable/bg_text_field"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/til_password"
+        android:background="@drawable/bg_text_field"
         android:layout_marginTop="15dp"
-        android:hint="@string/login_password"
-        android:textColorHint="@color/grey"
-        android:drawableStart="@drawable/ic_circle_account"
-        android:padding="15dp"
-        android:drawablePadding="15dp"
-        android:textColor="@color/grey">
+        app:passwordToggleEnabled="true">
 
-    </EditText>
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:hint="@string/login_password"
+            android:inputType="textPassword"
+            android:textColorHint="@color/grey"
+            android:drawableStart="@drawable/ic_circle_account"
+            android:padding="15dp"
+            android:drawablePadding="15dp"
+            android:textColor="@color/grey"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+<!--    <EditText-->
+<!--        android:id="@+id/til_password"-->
+<!--        android:background="@drawable/bg_text_field"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="15dp"-->
+<!--        android:hint="@string/login_password"-->
+<!--        android:inputType="textPassword"-->
+<!--        android:textColorHint="@color/grey"-->
+<!--        android:drawableStart="@drawable/ic_circle_account"-->
+<!--        android:padding="15dp"-->
+<!--        android:drawablePadding="15dp"-->
+<!--        android:textColor="@color/grey">-->
+
+<!--    </EditText>-->
 
 
     <Button

@@ -27,12 +27,6 @@
             android:textSize="18sp"
             android:id="@+id/tv_tanggal"
             android:textColor="@color/black"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="NAMA"
-            android:textSize="18sp"
-            android:id="@+id/tv_nama"
-            android:textColor="@color/black"/>
+
     </LinearLayout>
 </androidx.cardview.widget.CardView>
