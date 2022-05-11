@@ -79,7 +79,7 @@ class QRScanActivity : AppCompatActivity() {
                     }
 
                 })
-                Toast.makeText(this, "scan Result: ${it.text}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "BERHASIL CHECKIN", Toast.LENGTH_SHORT).show()
             }
         }
 
