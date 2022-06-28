@@ -14,13 +14,37 @@
         android:theme="@style/Theme.BukitAsam"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Admin.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.AdminScanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.HistoryDataActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.EditRole"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.updaterole"
+            android:exported="false" />
+        <activity
+            android:name=".user.edituser"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.UserActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.MainAdminActivity"
+            android:exported="false" />
+        <activity
             android:name=".DetailProfile"
             android:exported="false" />
         <activity
             android:name=".Profile.EditProfile"
             android:exported="false" />
         <activity
-            android:name=".QRScanActivity"
+            android:name=".user.QRScanActivity"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
@@ -34,7 +58,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".user.MainActivity"
             android:exported="false" />
     </application>
 

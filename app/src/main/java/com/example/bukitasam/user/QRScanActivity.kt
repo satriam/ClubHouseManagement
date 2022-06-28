@@ -1,4 +1,4 @@
-package com.example.bukitasam
+package com.example.bukitasam.user
 
 import android.Manifest
 import android.content.Intent
@@ -16,6 +16,7 @@ import com.budiyev.android.codescanner.DecodeCallback
 import com.budiyev.android.codescanner.ErrorCallback
 import com.budiyev.android.codescanner.ScanMode
 import com.example.bukitasam.Models.data_checkin
+import com.example.bukitasam.R
 import com.example.bukitasam.retrofit.RetrofitInstance
 import retrofit2.Call
 import retrofit2.Callback

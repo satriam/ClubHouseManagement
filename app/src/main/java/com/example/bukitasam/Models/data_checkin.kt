@@ -5,6 +5,9 @@ data class data_checkin(
     val lokasi_id:Int?,
     val created_at: String?,
     val user_id : Int?,
+    val nama:String?,
+    val email:String?,
+    val role:String?,
     val nama_lokasi : String?,
     val kode : String?,
     val status :Int

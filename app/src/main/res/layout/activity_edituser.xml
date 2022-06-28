@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".user.edituser"
+    android:layout_margin="5dp"
+    android:padding="5dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Edit Data User"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:gravity="center"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nama"
+        android:id="@+id/et_nama"
+        android:textSize="15dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Role"
+        android:id="@+id/et_role"
+        android:enabled="false"
+        android:textSize="15dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Simpan"
+        android:textSize="15sp"
+        android:id="@+id/btn_update_user"/>
+</LinearLayout>
