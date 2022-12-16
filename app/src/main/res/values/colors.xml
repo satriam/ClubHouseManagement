@@ -10,5 +10,9 @@
     <color name="primary_color">#CA965C</color>
     <color name="grey">#888888</color>
     <color name="grey_light">#F0F0F0</color>
-
+    <color name="colorPrimaryDark">#ED8E02</color>
+    <color name="colorPrimary">#FF9800</color>
+    <color name="putih">#ffff</color>
+    <color name="hitam">#000000</color>
+    <color name="green">#00bfa5</color>
 </resources>

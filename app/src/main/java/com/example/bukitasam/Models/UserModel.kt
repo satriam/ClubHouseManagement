@@ -5,5 +5,6 @@ data class UserModel(
     val nama:String?,
     val role_id:String?,
     val email:String?,
-    val role:String?
+    val role:String?,
+    val jenis: String?
 )

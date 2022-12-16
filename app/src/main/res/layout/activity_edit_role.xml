@@ -4,45 +4,246 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Admin.EditRole"
-    android:layout_margin="5dp"
-    android:padding="5dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
 
-    <TextView
+    <FrameLayout
+        android:id="@+id/flMain"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Edit Data User"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:gravity="center"/>
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Nama"
-        android:id="@+id/et_nama"
-        android:textSize="15dp"
-        android:enabled="false"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Role"
-        android:id="@+id/et_rolenama"
-        android:textSize="15dp"
-        android:enabled="false"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Role"
-        android:id="@+id/et_role"
-        android:inputType="number"
-        android:textSize="15dp"/>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:background="@drawable/top_bcakground">
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Simpan"
-        android:textSize="15sp"
-        android:id="@+id/btn_update_role"/>
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_gravity="center_horizontal"
+                app:srcCompat="@drawable/back_profile" />
+
+            <ImageView
+                android:id="@+id/imageView10"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_marginTop="50dp"
+                android:layout_gravity="center_horizontal"
+                app:srcCompat="@drawable/bukitasam" />
+
+
+            <TextView
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:id="@+id/p_nama"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Edit Role"
+                android:textColor="@color/putih"
+                android:textSize="18dp"
+                android:textStyle="bold"/>
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="350dp"
+            android:background="@drawable/bg_profil"
+            android:elevation="15dp"
+            android:orientation="vertical"
+
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/te6ew7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Role"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/Tv_role"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Admin"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/hitam" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="30dp"
+                        android:text="Nama Pengguna"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_Name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Nama"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/hitam" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="30dp"
+                        android:text="Email"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="blablabla@gmail.com"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/hitam" />
+                </LinearLayout>
+
+<!--                <EditText-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="50dp"-->
+<!--                        android:hint="Nama"-->
+<!--                        android:id="@+id/et_nama"-->
+<!--                        android:textSize="15dp"-->
+<!--                        android:paddingTop="10dp"-->
+<!--                        android:enabled="false"/>-->
+<!--                    <EditText-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="50dp"-->
+<!--                        android:hint="Role"-->
+<!--                        android:id="@+id/et_rolenama"-->
+<!--                        android:textSize="15dp"-->
+<!--                        android:enabled="false"/>-->
+                <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="Role"
+                        android:id="@+id/et_role"
+                        android:textSize="15dp"
+                        android:visibility="gone"/>
+                <Spinner
+                    android:id="@+id/spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/Languages"
+                    android:layout_marginTop="10dp"
+
+                    android:elevation="5dp"
+                   />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/bt_gpass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Simpan"
+            android:layout_marginTop="180dp"
+            android:layout_gravity="center"
+            android:elevation="10dp"
+            android:shadowColor="@color/colorPrimary"
+            android:background="@drawable/button_background_blue"
+
+            />
+
+    </FrameLayout>
+
+
 </LinearLayout>
+
+
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    tools:context=".Admin.EditRole"-->
+<!--    android:layout_margin="5dp"-->
+<!--    android:padding="5dp"-->
+<!--    android:orientation="vertical">-->
+
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Edit Data User"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="18sp"-->
+<!--        android:gravity="center"/>-->
+
+<!--    <EditText-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="Nama"-->
+<!--        android:id="@+id/et_nama"-->
+<!--        android:textSize="15dp"-->
+<!--        android:enabled="false"/>-->
+<!--    <EditText-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="Role"-->
+<!--        android:id="@+id/et_rolenama"-->
+<!--        android:textSize="15dp"-->
+<!--        android:enabled="false"/>-->
+<!--    <EditText-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="Role"-->
+<!--        android:id="@+id/et_role"-->
+<!--        android:inputType="number"-->
+<!--        android:textSize="15dp"/>-->
+
+<!--    <Button-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Simpan"-->
+<!--        android:textSize="15sp"-->
+<!--        android:id="@+id/btn_update_role"/>-->
+<!--</LinearLayout>-->

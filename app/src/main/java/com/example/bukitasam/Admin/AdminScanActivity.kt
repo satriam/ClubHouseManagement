@@ -1,6 +1,7 @@
 package com.example.bukitasam.Admin
 
 import android.Manifest
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +10,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import cn.pedant.SweetAlert.SweetAlertDialog
 import com.budiyev.android.codescanner.AutoFocusMode
 import com.budiyev.android.codescanner.CodeScanner
 import com.budiyev.android.codescanner.CodeScannerView
@@ -16,6 +18,7 @@ import com.budiyev.android.codescanner.DecodeCallback
 import com.budiyev.android.codescanner.ErrorCallback
 import com.budiyev.android.codescanner.ScanMode
 import com.example.bukitasam.Models.data_checkin
+import com.example.bukitasam.Models.data_checkin_admin
 import com.example.bukitasam.R
 import com.example.bukitasam.retrofit.RetrofitInstance
 import com.example.bukitasam.user.MainActivity
@@ -52,27 +55,55 @@ class AdminScanActivity : AppCompatActivity() {
         codeScanner.decodeCallback= DecodeCallback {
             runOnUiThread {
 //                val hasil= it.text.toString()
-                val sendData = apiClient.createcheckin(
+                val sendData = apiClient.createcheckinadmin(
                     it.text.toString()
-                ).enqueue(object : Callback<data_checkin> {
-                    override fun onResponse(call: Call<data_checkin>, response: Response<data_checkin>) {
+                ).enqueue(object : Callback<data_checkin_admin> {
+                    override fun onResponse(call: Call<data_checkin_admin>, response: Response<data_checkin_admin>) {
                         val response =response.body()
                         if (response?.status==200 ) {
-
-                            val intent = Intent(this@AdminScanActivity, MainAdminActivity::class.java).also {
-                                it.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
-                            }
-                            startActivity(intent)
-
-
-                        } else {
-                            Log.d("Debug", "")
-                            Toast.makeText(this@AdminScanActivity, "Login failed!", Toast.LENGTH_SHORT).show()
+                            SweetAlertDialog(this@AdminScanActivity, SweetAlertDialog.SUCCESS_TYPE)
+                                .setTitleText("Berhasil Checkin!")
+                                .setConfirmClickListener {
+                                    val intent = Intent(this@AdminScanActivity, MainAdminActivity::class.java)
+                                    startActivity(intent)
+                                    finish()
+                                }
+                                .show()
+                        } else if (response?.status==404) {
+                            SweetAlertDialog(this@AdminScanActivity, SweetAlertDialog.ERROR_TYPE)
+                                .setTitleText("GAGAL!")
+                                .setContentText("Tidak bisa Checkin Disini")
+                                .setConfirmClickListener {
+                                    val intent = Intent(this@AdminScanActivity, MainAdminActivity::class.java)
+                                    startActivity(intent)
+                                    finish()
+                                }
+                                .show()
+                        }else if (response?.status==403) {
+                            SweetAlertDialog(this@AdminScanActivity, SweetAlertDialog.ERROR_TYPE)
+                                .setTitleText("GAGAL!")
+                                .setContentText("Anda Sudah Checkin")
+                                .setConfirmClickListener {
+                                    val intent = Intent(this@AdminScanActivity, MainAdminActivity::class.java)
+                                    startActivity(intent)
+                                    finish()
+                                }
+                                .show()
+                        }else if (response?.status==402) {
+                            SweetAlertDialog(this@AdminScanActivity, SweetAlertDialog.ERROR_TYPE)
+                                .setTitleText("GAGAL!")
+                                .setContentText("Kuota Hari Ini Sudah Habis")
+                                .setConfirmClickListener {
+                                    val intent = Intent(this@AdminScanActivity, MainAdminActivity::class.java)
+                                    startActivity(intent)
+                                    finish()
+                                }
+                                .show()
                         }
                     }
 
 
-                    override fun onFailure(call: Call<data_checkin>, t: Throwable) {
+                    override fun onFailure(call: Call<data_checkin_admin>, t: Throwable) {
                         Toast.makeText(
                             this@AdminScanActivity,
                             t.message,
@@ -81,7 +112,7 @@ class AdminScanActivity : AppCompatActivity() {
                     }
 
                 })
-                Toast.makeText(this, "BERHASIL CHECKIN", Toast.LENGTH_SHORT).show()
+
             }
         }
 

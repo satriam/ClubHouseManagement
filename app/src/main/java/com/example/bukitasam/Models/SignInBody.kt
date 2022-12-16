@@ -6,8 +6,11 @@ data class SignInBody(
     val email: String?,
     val password: String?,
     val token:String,
-    val nama:String?,
-    val role_id :Int
+//    val nama:String?,
+    val role_id :Int,
+//    val jenis:String?,
+    val name:String?,
+    val no_pegawai:String?
 
 )
 

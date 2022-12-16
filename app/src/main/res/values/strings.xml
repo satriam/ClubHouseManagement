@@ -53,4 +53,15 @@
     <string name="about">about</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_history_admin">History Admin</string>
+
+
+    <string name="selected_item">Selected item:</string>
+
+    <string-array name="Languages">
+        <item></item>
+        <item>admin kolam</item>
+        <item>user</item>
+        <item>admin biliard</item>
+    </string-array>
 </resources>

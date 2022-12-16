@@ -25,17 +25,20 @@ class AdapterUser (private val dataList: ArrayList<UserModel>): RecyclerView.Ada
         val item=dataList[position]
         holder.nama.text=item.nama
         holder.email.text=item.email
-        holder.role.text=item.role
+        holder.role.text=item.jenis
+
 
 
 
         holder.itemView.setOnClickListener{
             val ctx = holder.context
             val intent = Intent(ctx,EditRole::class.java)
+
             intent.putExtra("id",item.id.toString())
             intent.putExtra("nama",item.nama.toString())
-            intent.putExtra("role",item.role.toString())
-            intent.putExtra("role_id",item.role_id.toString())
+            intent.putExtra("jenis",item.jenis.toString())
+            intent.putExtra("email",item.email.toString())
+//            intent.putExtra("role_id",item.role_id.toString())
             ctx.startActivity(intent)
         }
 

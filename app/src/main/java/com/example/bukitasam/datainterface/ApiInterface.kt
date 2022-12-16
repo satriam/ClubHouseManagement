@@ -1,9 +1,7 @@
 package com.example.bukitasam.datainterface
 
-import com.example.bukitasam.Models.SignInBody
-import com.example.bukitasam.Models.UserModel
+import com.example.bukitasam.Models.*
 
-import com.example.bukitasam.Models.data_checkin
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -36,6 +34,7 @@ interface ApiInterface {
     @PUT("auth/{id}")
     fun UpdateUser(
         @Path("id")id:Int?,
+//        @Field("jenis") jenis:String?,
         @Field("role_id") role_id:String?,
     ): Call<UserModel>
 
@@ -46,13 +45,26 @@ interface ApiInterface {
 
 
 
-    @GET("readcheckin")
-    fun getcheckinadmin(): Call<ArrayList<data_checkin>>
+    @GET("checkin")
+    fun getcheckinadmin(): Call<ArrayList<data_checkin_admin>>
 
     @FormUrlEncoded
     @POST("checkin")
     fun createcheckin(
         @Field("kode_lokasi") kode_lokasi:String
     ):Call<data_checkin>
-    }
+
+    @FormUrlEncoded
+    @POST("checkin")
+    fun createcheckinadmin(
+        @Field("kode_lokasi") kode_lokasi:String
+    ):Call<data_checkin_admin>
+
+//    @GET("me")
+//    fun getprof():Call<ArrayList<Profile_models>>
+
+}
+
+
+
 
