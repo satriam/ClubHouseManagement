@@ -38,8 +38,6 @@ class MainActivity : AppCompatActivity() {
 
         getCheckinData()
         checkLogin()
-
-
         swipeRefreshLayout = findViewById(R.id.swipe)
         swipeRefreshLayout.setOnRefreshListener {
             getCheckinData()
