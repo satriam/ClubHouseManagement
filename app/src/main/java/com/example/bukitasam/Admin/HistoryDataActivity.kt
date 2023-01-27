@@ -33,7 +33,7 @@ class HistoryDataActivity : AppCompatActivity() {
 
         bt_hapus.setOnClickListener{
             SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
-                .setTitleText("Apakah anda yakin untuk keluar?")
+                .setTitleText("Apakah anda Menghapus?")
                 .setConfirmText("Yakin")
                 .setConfirmClickListener {
                     deleteData()
@@ -80,18 +80,10 @@ class HistoryDataActivity : AppCompatActivity() {
                 val status_code= response.code()
                 Log.d("delete",status_code.toString())
                 if (response.isSuccessful) {
-                    SweetAlertDialog(this@HistoryDataActivity, SweetAlertDialog.SUCCESS_TYPE)
-                        .setTitleText("Selamat datang!")
-                        .setContentText("Berhasil Login")
-                        .setConfirmClickListener {
                             val intent = Intent(this@HistoryDataActivity,DashboardActivity::class.java).also {
                                 it.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
                             }
                             startActivity(intent)
-                            finish()
-                        }
-                        .show()
-
                 }
             }
 

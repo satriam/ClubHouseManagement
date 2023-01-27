@@ -35,6 +35,20 @@ class UserActivity : AppCompatActivity() {
                 super.onResume()
             }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.navigationadmin,menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when(item.itemId){
+            R.id.navigation_register->{
+                val intent=Intent(this,RegisterActivity::class.java)
+                startActivity(intent)
+                true
+            }else->super.onOptionsItemSelected(item)
+        }
+    }
     private fun getcheckinData(){
                 val listData = ArrayList<UserModel>()
                 val rvStudents: RecyclerView =findViewById(R.id.rv_user)

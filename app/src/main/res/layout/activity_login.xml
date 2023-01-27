@@ -60,7 +60,7 @@
             android:hint="@string/login_password"
             android:inputType="textPassword"
             android:textColorHint="@color/grey"
-            android:drawableStart="@drawable/ic_circle_account"
+            android:drawableStart="@drawable/password"
             android:padding="15dp"
             android:drawablePadding="15dp"
             android:textColor="@color/grey"/>

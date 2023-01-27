@@ -2,6 +2,7 @@ package com.example.bukitasam
 
 
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -71,6 +72,12 @@ private fun auth(){
     val btnlogin =findViewById<Button>(R.id.btn_login)
 
     btnlogin.setOnClickListener{
+        val pDialog = SweetAlertDialog(this, SweetAlertDialog.PROGRESS_TYPE)
+        pDialog.progressHelper.barColor = Color.parseColor("#A5DC86")
+        pDialog.titleText = "Loading"
+        pDialog.setCancelable(false)
+        pDialog.show()
+
         apiClient.signin(
             etemail.text.toString().trim(),
             etpassword.getEditText()?.getText().toString().trim()
@@ -78,25 +85,21 @@ private fun auth(){
             override fun onResponse(call: Call<SignInBody>, response: Response<SignInBody>) {
                 val loginresponse =response.body()
                 if (loginresponse?.status==200 && loginresponse?.role_id==1  ) {
+                    pDialog.changeAlertType(SweetAlertDialog.SUCCESS_TYPE)
+                        pDialog.setTitleText("Selamat datang!")
+                        pDialog.setContentText("Berhasil Login")
+                        pDialog.setConfirmClickListener {
+                            val intent = Intent(this@LoginActivity, DashboardActivity::class.java)
+                            startActivity(intent)
+                            finish()
+                        }
                     sessionManager.saveAuthToken(loginresponse.token)
                     sessionManager.setLoggin(true)
                     sessionManager.setrole("admin kolam")
                     sessionManager.setnama(loginresponse.name)
                     sessionManager.setnopeg(loginresponse.no_pegawai)
-                    SweetAlertDialog(this@LoginActivity, SweetAlertDialog.SUCCESS_TYPE)
-                        .setTitleText("Selamat datang!")
-                        .setContentText("Berhasil Login")
-                        .setConfirmClickListener {
-                            val intent = Intent(this@LoginActivity, DashboardActivity::class.java).also {
-                                it.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
-                            }
-                            startActivity(intent)
-                        }
-                        .show()
-
-
-
                 }else if (loginresponse?.status==200 && loginresponse?.role_id==3  ) {
+                    pDialog.dismiss()
                     sessionManager.saveAuthToken(loginresponse.token)
                     sessionManager.setLoggin(true)
                     sessionManager.setrole("admin billiard")
@@ -116,7 +119,7 @@ private fun auth(){
 
 
                 }else if(loginresponse?.status==200 && loginresponse?.role_id==2) {
-
+                    pDialog.dismiss()
                     sessionManager.saveAuthToken(loginresponse.token)
                     sessionManager.setLoggin(true)
                     sessionManager.setrole("user")
@@ -130,22 +133,24 @@ private fun auth(){
                             startActivity(intent)
                             finish()
                         })
+
                         .show()
+
                 }
                 else {
-                    SweetAlertDialog(this@LoginActivity, SweetAlertDialog.ERROR_TYPE)
-                        .setTitleText("Oops...")
-                        .setContentText("Silahkan Cek Password/Email")
-                        .show()
+                    pDialog.changeAlertType(SweetAlertDialog.ERROR_TYPE)
+                        pDialog.setTitleText("Oops...")
+                        pDialog.setContentText("Silahkan Cek Password/Email")
+
                 }
 
             }
 
             override fun onFailure(call: Call<SignInBody>, t: Throwable) {
-                SweetAlertDialog(this@LoginActivity, SweetAlertDialog.ERROR_TYPE)
-                    .setTitleText("Oops...")
-                    .setContentText("Something went wrong!")
-                    .show()
+                pDialog.changeAlertType(SweetAlertDialog.ERROR_TYPE)
+                    pDialog.setTitleText("Oops...")
+                    pDialog.setContentText("Something went wrong!")
+
             }
 
         })

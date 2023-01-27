@@ -10,9 +10,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.cardview.widget.CardView
 import cn.pedant.SweetAlert.SweetAlertDialog
-import com.example.bukitasam.Admin.AdminScanActivity
-import com.example.bukitasam.Admin.MainAdminActivity
-import com.example.bukitasam.Admin.UserActivity
+
 import com.example.bukitasam.LoginActivity
 import com.example.bukitasam.R
 import com.example.bukitasam.retrofit.SessionManager

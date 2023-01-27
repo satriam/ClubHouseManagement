@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BukitAsam</string>
+    <string name="app_name">BA Club</string>
     <string name="started_title">HALOOO!!!</string>
     <string name="started_sub_title">
        Nice to meet you, come join our community!
@@ -14,7 +14,7 @@
         <font color="#F4DFBA"><b>Login</b></font>
         if you already have an account.
     </string>
-    <string name="login_email">your email or username</string>
+    <string name="login_email">your email </string>
     <string name="login_password">your password</string>
     <string name="login_forgot_pw">Forgot Password?</string>
     <string name="login_havent_account">

@@ -1,20 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 <!--    <item-->
 <!--        android:id="@+id/navigation_home"-->
 <!--        android:icon="@drawable/ic_circle_account"-->
 <!--        android:title="home"/>-->
-    <item
-        android:id="@+id/User"
-        android:icon="@drawable/ic_circle_account"
-        android:title="Data User"/>
+
     <item
         android:id="@+id/navigation_register"
-        android:icon="@drawable/ic_circle_account"
-        android:title="Tambah User"/>
-    <item
-        android:id="@+id/logout"
-        android:icon="@drawable/ic_circle_account"
-        android:title="Logout"/>
+        android:icon="@drawable/tambah"
+        android:title="Tambah User"
+        app:showAsAction="always"/>
+
 
 </menu>
